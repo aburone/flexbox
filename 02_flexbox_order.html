@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fexbox demo</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="02_flexbox_order.css">
+    </head>
+    <body>
+
+        <h1>flex-order</h1>
+        <h2>Default (0 1 2)</h2>
+        <section class="flex-container">
+            <img src="meme01.jpg"/>
+            <img src="meme02.jpg"/>
+            <img src="meme03.jpg"/>
+        </section>
+        <h2>1st item order as 2</h2>
+        <section class="flex-container">
+            <img src="meme01.jpg" class="flex-item-order-2nd"/>
+            <img src="meme02.jpg"/>
+            <img src="meme03.jpg"/>
+        </section>
+        <h2>3rd item order as 0 (should have no effect)</h2>
+        <section class="flex-container">
+            <img src="meme01.jpg"/>
+            <img src="meme02.jpg"/>
+            <img src="meme03.jpg" class="flex-item-order-0th"/>
+        </section>
+        <h2>2nd item order as -1</h2>
+        <section class="flex-container">
+            <img src="meme01.jpg"/>
+            <img src="meme02.jpg" class="flex-item-order-minus1"/>
+            <img src="meme03.jpg"/>
+        </section>
+        <h2>2nd item order as -1 and 3rd item as -2</h2>
+        <section class="flex-container">
+            <img src="meme01.jpg"/>
+            <img src="meme02.jpg" class="flex-item-order-minus1"/>
+            <img src="meme03.jpg" class="flex-item-order-minus2"/>
+        </section>
+
+    </body>
+</html>

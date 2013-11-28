@@ -1,0 +1,319 @@
+/***************************************************************/
+/* Color                                                       */
+/***************************************************************/
+body{
+    background:#a67993;
+    -webkit-transition:background-color 500ms ease-in;
+    -moz-transition:background-color 500ms ease-in;
+    -o-transition:background-color 500ms ease-in;
+    transition:background-color 500ms ease-in;
+}
+
+.main-content {background:#fff}
+.main-nav {background:#ccc}
+.main-sidebar {background:#555; color: #bbb}
+.main-content,
+.main-sidebar,
+.main-nav {
+    -webkit-transition: all .5s ease-in-out .2s;
+    -moz-transition: all .5s ease-in-out .2s;
+    -ms-transition: all .5s ease-in-out .2s;
+    -o-transition: all .5s ease-in-out .2s;
+    transition: all .5s ease-in-out .2s;
+}
+a {
+    -webkit-transition:color 500ms ease-in;
+    -moz-transition:color 500ms ease-in;
+    -o-transition:color 500ms ease-in;
+    transition:color 500ms ease-in;
+}
+
+/***************************************************************/
+/* Box Model                                                   */
+/***************************************************************/
+* {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+body {padding:1em;}
+.main-nav,
+.main-content,
+.main-sidebar 
+{
+    padding:1em;
+}
+img {margin-bottom: 1em}
+.main-content {
+    margin: 1em 0;
+}
+.center {display:block; margin-left: auto; margin-right: auto;}
+.main-content {}
+.main-content p {
+    max-width: 35em;
+    line-height: 1.5rem;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+.main-nav,
+.main-sidebar {
+    font-size: 80%;
+    line-height: 1.5rem;
+}
+
+img {max-width: 100%;}
+/***************************************************************/
+/* media query 55em                                           */
+/***************************************************************/
+@media only screen and (min-width:55em) {
+    body {background:#79a693;padding:2.5em}
+    .main-content {margin: 0;}
+
+    /***************************************************************/
+    /* Box Model                                                   */
+    /***************************************************************/
+    .main-content,
+    .main-sidebar,
+    .main-nav {
+        padding:2em;
+    }
+    img {margin-bottom: 2em}
+    .main-content {
+        max-width: 39em;
+    }
+    /***************************************************************/
+    /* Flex                                                        */
+    /***************************************************************/
+    .flex-container {
+        /* 2009 */
+        display: -webkit-box;
+        display: -moz-box;
+        /* 2011 */
+        display: -ms-flexbox;
+        /* 2012 */
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .flex-container-justify {
+        /* Aligns flex items along the main axis of the current line of the flex container. */
+        /* 2009. box-pack: start | end | center | justify */
+        /* http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#packing */
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        /* 2011. flex-pack: start | end | center | justify | distribute */
+        /* http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-pack */
+        -ms-flex-pack: distribute;
+        /* 2012. justify-content: flex-start | flex-end | center | baseline | stretch */
+        /* http://www.w3.org/TR/css3-flexbox/#justify-content-property */
+        -webkit-justify-content: stretch;
+        justify-content: stretch;
+    }
+    .flex-container-x-justify {
+        /* Cross-axis Alignment, single line */
+        /* http://www.w3.org/TR/css3-flexbox/#align-items-property */
+        -webkit-box-align: stretch;
+        -moz-box-align: stretch;
+        -ms-flex-align: stretch;
+        /* ‘align-items’ and ‘align-self’. flex-start | flex-end | center | baseline | stretch (default) */
+        -webkit-align-items: stretch;
+        align-items: stretch;
+    }
+    .flex-container-x-justify-multiline {
+        /* Cross-axis Alignment, multiline */
+        /* 2009 has no support? */
+        /* http://www.w3.org/TR/css3-flexbox/#align-content-property */
+
+        /* 2011. flex-line-pack: start | end | center | justify | distribute | stretch */
+        /* http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-line-pack */
+        -ms-flex-line-pack: distribute;
+        /* 2012. align-content: flex-start | flex-end | center | space-between | space-around | stretch */
+        /* http://www.w3.org/TR/css3-flexbox/#align-content-property */
+        -webkit-align-content: space-around;
+        align-content: space-around;
+    }
+
+    .flex-container-direction {
+        /*  specifies how flex items are placed in the flex container, 
+            by setting the direction of the flex container's main axis. 
+            This determines the direction that flex items are laid out in. */
+
+        /* 2009: box-direction: normal | reverse | inherit */
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        /* 2009: box-orient: horizontal | vertical | inline-axis | block-axis | inherit */
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+
+        /* 2011-2012: flex-direction: row | row-reverse | column | column-reverse */
+        /* http://www.w3.org/TR/css3-flexbox/#flex-direction-property */
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .flex-container-multiline {
+        /* 2011-2012: Flex-wrap: nowrap (default) | wrap | wrap-reverse */
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .flex-flow {
+        /* 2011-2012: flex-flow is shorthand for Flex Direction and Flex-Wrap. <'flex-direction'> || <'flex-wrap'> */ 
+        flex-flow: column nowrap;
+    }
+
+    .flex-item-order {
+        /* Flex items are, by default, displayed and laid out in the same order as they appear in the source document.
+        The ‘order’ property can be used to change this ordering. 
+        Alters ONLY the visual order, not the logical one */
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        /* 2012. Order: <integer> (default=0, accepts -1) */
+        /* http://www.w3.org/TR/css3-flexbox/#order-property */
+        -webkit-order: 0;
+        order: 0;
+    }
+    .flex-item-align {
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        align-self: center;
+    }    
+
+
+
+
+    .flex-dyna {
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .flex-rows  {
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .flex-item {
+        -ms-flex-item-align:stretch;
+        -webkit-align-self:stretch;
+        align-self:stretch;
+    }
+    .flex-item-narrow {
+        -webkit-box-flex: 3;
+        -moz-box-flex:3;
+        -ms-flex: 1;
+        -webkit-flex: 1;
+        flex:  1;
+    }
+    .flex-item-wide {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -ms-flex: 4;
+        -webkit-flex: 4;
+        flex: 4;
+    }
+
+
+}
+
+/***************************************************************/
+/* media query 80em                                           */
+/***************************************************************/
+@media only screen and (min-width:80em) {
+    body {background:#7993a6;padding:4em}
+    /***************************************************************/
+    /* Box Model                                                   */
+    /***************************************************************/
+    .main-content,
+    .main-sidebar,
+    .main-nav {
+        padding:3em;
+    }
+    img {margin-bottom: 3em}
+    .main-content {
+        max-width: 41em;
+    }
+    /***************************************************************/
+    /* Flex                                                        */
+    /***************************************************************/
+    .flex-rows, .flex-dyna {
+        /* 2009: Display order. normal | reverse | inherit */
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        /* 2009: Axis orientation. horizontal | vertical | inline-axis | block-axis | inherit */
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        /* 2011-2012: Ordering and Orientation. row | row-reverse | column | column-reverse */
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        /* 2011-2012: Flex-wrap. nowrap | wrap | wrap-reverse */
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        /* 2011-2012: flex-flow is shorthand for Flex Direction and Flex-Wrap. <'flex-direction'> || <'flex-wrap'> */ 
+    }
+
+    .flex-item-dyna, .flex-item-narrow {
+        -webkit-box-flex: 3;
+        -moz-box-flex:3;
+        -ms-flex: 1;
+        -webkit-flex: 1;
+        flex:  1;
+    }
+}
+
+/***************************************************************/
+/* media query 96em                                           */
+/***************************************************************/
+@media only screen and (min-width:96em) {
+    body {background:#a693a6}
+    /***************************************************************/
+    /* Box Model                                                   */
+    /***************************************************************/
+    .main-content,
+    .main-sidebar,
+    .main-nav {
+        padding:3em 4em;
+    }
+    .main-content {
+        max-width: 43em;
+    }
+    .main-nav,
+    .main-sidebar {
+        max-width: 20em;
+    }
+    .main-nav {        margin:0 7%;}
+    /***************************************************************/
+    /* Flex                                                        */
+    /***************************************************************/
+    .flex-container{
+        justify-content: space-around;
+    }
+}
+
+
+/*
+Legacy Firefox implementation treats all flex containers
+as inline-block elements.
+*/
+
+@-moz-document url-prefix() {
+    .flex-container {
+    width: 100%;
+}
+}
+

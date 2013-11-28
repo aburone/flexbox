@@ -1,0 +1,50 @@
+.flex-container {
+    /* 2009 */
+    display: -webkit-box;
+    display: -moz-box;
+    /* 2011 */
+    display: -ms-flexbox;
+    /* 2012 */
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-item-order-0th {
+    -webkit-box-ordinal-group: 0;
+    -moz-box-ordinal-group: 0;
+    -ms-flex-order: 0;
+    -webkit-order: 0;
+    order: 0;
+}
+.flex-item-order-2nd {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+}
+.flex-item-order-minus1 {
+    -webkit-box-ordinal-group: -1;
+    -moz-box-ordinal-group: -1;
+    -ms-flex-order: -1;
+    -webkit-order: -1;
+    order: -1;
+}
+
+.flex-item-order-minus2 {
+    /* Flex items are, by default, displayed and laid out in the same order as they appear in the source document.
+    The ‘order’ property can be used to change this ordering. 
+    Alters ONLY the visual order, not the logical one */
+    /* 2009. box-ordinal-group: <integer> (default 1, does NOT accepts negatives or 0)*/
+    /* http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#displayorder */
+    -webkit-box-ordinal-group: -2; /* invalid value */
+    -moz-box-ordinal-group: -2;    /* invalid value */
+    /* 2011. flex-order: <integer> (default=0, accepts negatives) */
+    /* http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-order */
+    /* Same behaviour as 2012 */
+    -ms-flex-order: -2;
+    /* 2012. Order: <integer> (default=0, accepts negatives) */
+    /* http://www.w3.org/TR/css3-flexbox/#order-property */
+    -webkit-order: -2;
+    order: -2;
+}
